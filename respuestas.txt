@@ -1,0 +1,7 @@
+-¿Puede ver el archivo tp2_1_2.c? ¿Por qué?
+No se puede ver ya que la interfaz solo muestra lo del branch en el que estaba trabajando, a menos que
+en el source control seleccione para ver todas las ramas.
+
+-En VSCode vuelva al “Source Control” ¿Qué diferencias nota?
+Se ve que en la rama de color azul se agrego un punto (commit) y que a la vez, hay una rama amarilla de Opcion_2 
+al lado del main.
