@@ -7,26 +7,42 @@ typedef struct  {
     int cantidad_nucleos; // Cantidad de núcleos (valor entre 1 y 8)
     char *tipo_cpu; // Tipo de procesador (apuntador a cadena de caracteres)
     }compu;
+
+    void listarPCs(compu pcs[], int cantidad);
+     char tipos[6][10] = {"Intel", "AMD", "Celeron", "Athlon", "Core",
+        "Pentium"};
+    
 int main(){
     srand(time(NULL));
-    char tipos[6][10] = {"Intel", "AMD", "Celeron", "Athlon", "Core",
-        "Pentium"};
+
     compu arregloDePcs[5];
     for (int i = 0; i < 5; i++)
     {
-        printf("PC %d: \n", i+1);
         arregloDePcs[i].velocidad=rand() % 3+1;
         arregloDePcs[i].anio=rand() % (2024-2015+1)+2015;
         arregloDePcs[i].cantidad_nucleos=rand() % 8 +1;
         arregloDePcs[i].tipo_cpu=tipos[rand()%6];
-        printf("Velodidad GHz: %d \n",arregloDePcs[i].velocidad);
-        printf("Anio de fabricacion: %d \n",arregloDePcs[i].anio);
-        printf("Cantidad de nucleos: %d \n",arregloDePcs[i].cantidad_nucleos);
-        printf("Tipo de cpu: %s \n",arregloDePcs[i].tipo_cpu);
     }
+    listarPCs(arregloDePcs, 5);
     
 
 
 
     return 0;
+}
+void listarPCs(compu pcs[], int cantidad)
+{   
+
+    for (int i = 0; i < cantidad; i++)
+    {
+        printf("PC %d: \n", i+1);
+        pcs[i].velocidad=rand() % 3+1;
+        pcs[i].anio=rand() % (2024-2015+1)+2015;
+        pcs[i].cantidad_nucleos=rand() % 8 +1;
+        pcs[i].tipo_cpu=tipos[rand()%6];
+        printf("Velodidad GHz: %d \n",pcs[i].velocidad);
+        printf("Anio de fabricacion: %d \n",pcs[i].anio);
+        printf("Cantidad de nucleos: %d \n",pcs[i].cantidad_nucleos);
+        printf("Tipo de cpu: %s \n",pcs[i].tipo_cpu);
+    }
 }
